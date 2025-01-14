@@ -1,4 +1,4 @@
-package com.managmentstudent.dtos;
+package com.managmentstudent.dtos.request;
 
 
 import lombok.AllArgsConstructor;
