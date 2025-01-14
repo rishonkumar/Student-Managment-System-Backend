@@ -1,0 +1,19 @@
+@Service marks the class as a service layer component.
+@Transactional ensures that methods execute within a transaction context.
+@Autowired injects the dependencies automatically.
+private final promotes immutability and thread safety, ensuring dependencies are injected via the constructor and are not reassigned.
+
+
+// Base class for all exceptions
+RuntimeException
+    ↳ ResourceNotFoundException
+    ↳ BusinessException
+
+
+The flow works like this:
+
+Service throws exception (ResourceNotFoundException or BusinessException)
+Exception bubbles up to controller
+GlobalExceptionHandler intercepts it
+Appropriate @ExceptionHandler method handles it
+Client receives formatted error response
