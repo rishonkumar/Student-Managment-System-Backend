@@ -22,6 +22,10 @@ public class Subject {
     private String subjectCode;
     private Integer credits;
 
+    @ManyToOne
+    @JoinColumn(name = "teacher_id")
+    private Teacher teacher;
+
     @OneToMany(mappedBy = "subject")
     private List<Enrollment> enrollments;
 

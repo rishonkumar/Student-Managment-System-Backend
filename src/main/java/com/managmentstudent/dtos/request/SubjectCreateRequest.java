@@ -14,6 +14,4 @@ public class SubjectCreateRequest {
     private String subjectName;
     private String subjectCode;
     private Integer credits;
-    private Long teacherId;
-
 }

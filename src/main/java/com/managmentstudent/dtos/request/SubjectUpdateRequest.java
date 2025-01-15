@@ -13,5 +13,4 @@ import lombok.Setter;
 public class SubjectUpdateRequest {
     private String subjectName;
     private Integer credits;
-    private Long teacherId;
 }

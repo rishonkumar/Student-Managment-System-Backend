@@ -15,7 +15,4 @@ public class SubjectResponse {
     private String subjectName;
     private String subjectCode;
     private Integer credits;
-    private TeacherResponse teacher;
-
-    // Getters, setters, no-args constructor
 }
