@@ -17,3 +17,21 @@ Exception bubbles up to controller
 GlobalExceptionHandler intercepts it
 Appropriate @ExceptionHandler method handles it
 Client receives formatted error response
+
+
+// Using Lambda Expression
+@Override
+public List<StudentResponse> getAllStudentsLambda() {
+    return studentRepository.findAll().stream()
+            .map(student -> convertToResponse(student))
+            .collect(Collectors.toList());
+}
+
+// Using Method Reference
+@Override
+public List<StudentResponse> getAllStudentsMethodRef() {
+    return studentRepository.findAll().stream()
+            .map(this::convertToResponse)
+            .collect(Collectors.toList());
+}
+
