@@ -34,6 +34,9 @@ public class StudentServiceImpl implements StudentService {
 
     @Override
     public StudentResponse createStudent(StudentCreateRequest request) {
+        System.out.println("Received request to create student: " + request.getEmail());
+
+
         if (studentRepository.findByEmail(request.getEmail()).isPresent()) {
             throw new BusinessException("Student with email already exists");
         }
@@ -47,6 +50,8 @@ public class StudentServiceImpl implements StudentService {
         student.setAddress(request.getAddress());
 
         Student savedStudent = studentRepository.save(student);
+        System.out.println("Saved student with ID: " + savedStudent.getId());
+
         return convertToResponse(savedStudent);
     }
 

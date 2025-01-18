@@ -16,4 +16,6 @@ public interface EnrollmentService {
     List<EnrollmentResponse> getEnrollmentsByStudent(Long studentId);
 
     Double calculateTotalFeesPaid(Long studentId);
+
+    List<EnrollmentResponse> getAllEnrollments();
 }

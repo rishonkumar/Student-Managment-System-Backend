@@ -104,6 +104,15 @@ public class EnrollmentServiceImpl implements EnrollmentService {
                 .sum();
     }
 
+    @Override
+    public List<EnrollmentResponse> getAllEnrollments() {
+        List<Enrollment> enrollments = enrollmentRepository.findAll();
+        return enrollments.stream()
+                .map(this::convertToResponse)
+                .collect(Collectors.toList());
+    }
+
+
     private EnrollmentResponse convertToResponse(Enrollment enrollment) {
         EnrollmentResponse response = new EnrollmentResponse();
         response.setId(enrollment.getId());

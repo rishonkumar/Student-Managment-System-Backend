@@ -46,4 +46,9 @@ public class EnrollmentController {
     public ResponseEntity<Double> getTotalFeesPaid(@PathVariable Long studentId) {
         return ResponseEntity.ok(enrollmentService.calculateTotalFeesPaid(studentId));
     }
+
+    @GetMapping
+    public ResponseEntity<List<EnrollmentResponse>> getAllEnrollments() {
+        return ResponseEntity.ok(enrollmentService.getAllEnrollments());
+    }
 }
